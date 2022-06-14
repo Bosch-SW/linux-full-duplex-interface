@@ -23,5 +23,4 @@ docker-image:
 # usually builds various build configurations and if all fine, just removes
 # the build artifacts)
 test:
-	cd $$PWD && sudo -u `whoami` docker build -t linux-full-duplex-interface \
-		.
+	cd $$PWD && sudo -u `whoami` docker build .

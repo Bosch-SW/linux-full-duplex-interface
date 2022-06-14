@@ -1,6 +1,6 @@
 # The file describes the testing sequence of the Full Duplex Interface
 
-FROM bosch-linux-ext-modules-build:latest AS bosch-linux-full-duplex-interface
+FROM bosch-linux-ext-modules-build:latest
 
 # NOTE: to purge the Docker unused files use:
 #   $ docker system prune -a
