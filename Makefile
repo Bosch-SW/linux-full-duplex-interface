@@ -16,7 +16,8 @@ uninstall:
 # Build Docker deployed image (Docker image with built and installed
 # Linux Full Duplex Interface) on the basis of linux-full-duplex-interface
 docker-image:
-	cd $$PWD && sudo -u `whoami` docker build -t linux-full-duplex-interface \
+	cd $$PWD && sudo -u `whoami` docker build \
+		-t bosch-linux-full-duplex-interface  \
 		-f ./Dockerfile.docker-image .
 
 # Test ourselves in Docker environment (similar to docker-image, but
