@@ -18,10 +18,16 @@ uninstall:
 docker-image:
 	cd $$PWD && sudo -u `whoami` docker build \
 		-t bosch-linux-full-duplex-interface  \
-		-f ./Dockerfile.docker-image .
+		-f ./Dockerfile.docker-image . \
+		&& echo "docker-image: \033[0;32mOK\033[0m"
 
 # Test ourselves in Docker environment (similar to docker-image, but
 # usually builds various build configurations and if all fine, just removes
 # the build artifacts)
 test:
-	cd $$PWD && sudo -u `whoami` docker build .
+	cd $$PWD && sudo -u `whoami` docker build . \
+		&& echo "test: \033[0;32mOK\033[0m"
+
+# combines both: `test` and `docker-image` target
+base: docker-image test
+	echo "base: \033[0;32mOK\033[0m"
