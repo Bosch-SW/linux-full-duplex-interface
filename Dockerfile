@@ -40,4 +40,3 @@ RUN make -C ${kernel_source_dir} M=${repo_path} \
     && make KVER=${kernel_version} uninstall \
     && rm -rf ${repo_path}/*
 COPY . .
-
