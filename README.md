@@ -13,6 +13,16 @@ This module is to be used to build the
 itself and also interface it or similar transport layers to
 transport client code like [ICCom](https://github.com/Bosch-SW/linux-iccom).
 
+# Dependencies
+
+This component docker chain depends on the 
+<https://sourcecode.socialcoding.bosch.com/projects/CM_CI2_LINUX/repos/linux-ext-modules-build-base/browse>
+so, if you need to build the docker image of this component,
+you will need one from `linux-ext-modules-build-base` first.
+
+NOTE: if you need just to install it directly onto your system,
+basically you don't need anything.
+
 # How to build it?
 
 To build it against current kernel:
@@ -22,7 +32,7 @@ $ make
 
 To build it in host environment against the specific kernel:
 ```
-$ make KVER_NATIVE=5.15.0-97-generic
+$ make KVER=5.15.0-97-generic
 ```
 
 # How to install it on host
@@ -34,7 +44,7 @@ $ make install
 
 To install it on host for given kernel:
 ```
-$ make install KVER_NATIVE=5.15.0-97-generic
+$ make install KVER=5.15.0-97-generic
 ```
 
 # Build Docker image for docker images chain and testing
@@ -49,8 +59,8 @@ $ make docker-image
 
 To build a docker image tagged customly and using the specific kernel:
 ```
-$ make docker-image DOCKER_OUT_IMAGE_TAGE=my-custom-img-tag \
-        KVER_TEST=5.15.0-97-generic
+$ make docker-image DOCKER_OUT_IMAGE_TAG=my-custom-img-tag \
+        KVER_DOCKER=5.15.0-97-generic
 ```
 
 # How to test it?
@@ -62,5 +72,18 @@ $ make test
 
 To build and test it in a docker container against given kernel:
 ```
-$ make test KVER_TEST=5.15.0-97-generic
+$ make test KVER_DOCKER=5.15.0-97-generic
+
 ```
+
+# Troubleshooting
+
+* if you have the Docker build failure:
+   "failed to solve with frontend dockerfile.v0: failed
+    to create LLB definition: pull access denied, repository
+    does not exist or may require authorization: server
+    message: insufficient_scope: authorization failed"
+  * Then you need to clone from
+    <https://sourcecode.socialcoding.bosch.com/projects/CM_CI2_LINUX/repos/linux-ext-modules-build-base/browse>
+    and then run 'make docker-image' there. This will make the
+    docker image the current build is based on.
