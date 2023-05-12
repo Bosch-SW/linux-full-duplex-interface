@@ -76,6 +76,10 @@ $ make test KVER_DOCKER=5.15.0-97-generic
 
 ```
 
+Note: Full Duplex Interface is tested in x86 and ARM (with device tree)
+environment where the same tests are run in different architectures. The
+code get's compiled for x86 and cross compiled for ARM and tested.
+
 # Troubleshooting
 
 * if you have the Docker build failure:

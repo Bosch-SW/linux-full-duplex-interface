@@ -16,7 +16,7 @@ COPY . .
 
 # installing into a kernel source tree inside the docker
 # from there it can be used to build dependent modules
-# avainst the given kernel
+# against the given kernel
 # x86
 RUN make LINUX_SRC_ROOT="/repos/linux_x86" install-to-src
 # ARM
