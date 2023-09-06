@@ -77,7 +77,7 @@ RUN grep "${TEST_NAME}.rmmod: PASS" /qemu_run_x86.log
 RUN grep "${TEST_NAME}.data-exchange: PASS" /qemu_run_x86.log
 
 # ARM
-RUN run-qemu-tests-arm /builds/linux_arm/device_tree/versatile-pb.dtb
+RUN run-qemu-tests-arm /builds/linux_arm/device_tree/ast2500.dtb
 
 RUN make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- LINUX_SRC_ROOT="/repos/linux_arm" uninstall-from-src
 
