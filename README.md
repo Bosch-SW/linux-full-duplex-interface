@@ -15,7 +15,7 @@ transport client code like [ICCom](https://github.com/Bosch-SW/linux-iccom).
 
 # Dependencies
 
-This component docker chain depends on the 
+This component docker chain depends on the
 <https://sourcecode.socialcoding.bosch.com/projects/CM_CI2_LINUX/repos/linux-ext-modules-build-base/browse>
 so, if you need to build the docker image of this component,
 you will need one from `linux-ext-modules-build-base` first.
