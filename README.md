@@ -16,7 +16,7 @@ transport client code like [ICCom](https://github.com/Bosch-SW/linux-iccom).
 # Dependencies
 
 This component docker chain depends on the
-<https://sourcecode.socialcoding.bosch.com/projects/CM_CI2_LINUX/repos/linux-ext-modules-build-base/browse>
+`linux-ext-modules-build-base`
 so, if you need to build the docker image of this component,
 you will need one from `linux-ext-modules-build-base` first.
 
@@ -88,6 +88,6 @@ code get's compiled for x86 and cross compiled for ARM and tested.
     does not exist or may require authorization: server
     message: insufficient_scope: authorization failed"
   * Then you need to clone from
-    <https://sourcecode.socialcoding.bosch.com/projects/CM_CI2_LINUX/repos/linux-ext-modules-build-base/browse>
+    `linux-ext-modules-build-base`
     and then run 'make docker-image' there. This will make the
     docker image the current build is based on.
